@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhai Ka Weather & Outfit Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #74b9ff, #a29bfe); /* Default background */
+  transition: background 0.8s ease; /* Smooth color shifting transition */
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  color: #2d3436;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #dfe6e9;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #6c5ce7;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #5b4cc4;
+}
+
+.loading-text {
+  font-weight: bold;
+  color: #6c5ce7;
+  margin-bottom: 15px;
+}
+
+.display-area {
+  margin-top: 10px;
+}
+
+#cityName {
+  font-size: 28px;
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.temp-condition {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #636e72;
+  margin-bottom: 25px;
+}
+
+#temp {
+  color: #d63031;
+  font-size: 24px;
+}
+
+.advice-box {
+  background-color: #f8f9fa;
+  border-left: 5px solid #6c5ce7;
+  padding: 15px;
+  border-radius: 0 10px 10px 0;
+  text-align: left;
+}
+
+.advice-box h3 {
+  font-size: 16px;
+  color: #2d3436;
+  margin-bottom: 5px;
+}
+
+#outfitAdvice {
+  font-size: 15px;
+  color: #2d3436;
+  line-height: 1.5;
+}
+
+    </style>
+
+  <div class="card" id="weatherCard">
+    <h1>Weather & Outfit Advisor 🧔</h1>
+    
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city name (e.g., Delhi)...">
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- Loading Text (Hidden by default, JS se toggle hoga) -->
+    <div id="loading" class="loading-text" style="display: none;">Fetching data, rukho thoda...</div>
+
+    <!-- Main Output Area -->
+    <div id="weatherDisplay" class="display-area">
+      <h2 id="cityName">Lucknow</h2>
+      <div class="temp-condition">
+        <span id="temp">--°C</span>
+        <span id="desc">Condition</span>
+      </div>
+      
+      <!-- Special Outfit Advice Box -->
+      <div class="advice-box">
+        <h3>Bhai Ke Liye Advice:</h3>
+        <p id="outfitAdvice">Apna city search karo, mast advice dunga!</p>
+      </div>
+    </div>
+  </div>
+
+  <script href="script.js"></script>
+</body>
+</html>
