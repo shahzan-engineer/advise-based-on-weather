@@ -23,7 +23,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #74b9ff, #a29bfe);
+            /* background: linear-gradient(135deg, #74b9ff, #a29bfe); */
             /* Default background */
             transition: background 0.8s ease;
             /* Smooth color shifting transition */
@@ -48,6 +48,11 @@
         }
 
         .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        #desc {
             display: flex;
             gap: 10px;
             margin-bottom: 25px;
@@ -152,6 +157,7 @@
             <div class="temp-condition">
                 <span id="temp">--°C</span>
                 <span id="desc">Condition</span>
+                <span id="humidity">Humidity</span>
             </div>
 
             <!-- Special Outfit Advice Box -->
